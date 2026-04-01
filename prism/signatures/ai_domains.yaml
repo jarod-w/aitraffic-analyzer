@@ -1,0 +1,173 @@
+providers:
+  openai:
+    display_name: "OpenAI"
+    domains:
+      - "api.openai.com"
+      - "chat.openai.com"
+      - "chatgpt.com"
+      - "*.oaiusercontent.com"
+      - "*.openai.com"
+    confidence: 1.0
+
+  anthropic:
+    display_name: "Anthropic"
+    domains:
+      - "api.anthropic.com"
+      - "claude.ai"
+      - "*.anthropic.com"
+    confidence: 1.0
+
+  deepseek:
+    display_name: "DeepSeek"
+    domains:
+      - "api.deepseek.com"
+      - "chat.deepseek.com"
+    confidence: 1.0
+
+  google_ai:
+    display_name: "Google AI"
+    domains:
+      - "generativelanguage.googleapis.com"
+      - "gemini.google.com"
+      - "aistudio.google.com"
+      - "*.generativeai.google.com"
+    confidence: 1.0
+
+  mistral:
+    display_name: "Mistral AI"
+    domains:
+      - "api.mistral.ai"
+      - "mistral.ai"
+    confidence: 1.0
+
+  cohere:
+    display_name: "Cohere"
+    domains:
+      - "api.cohere.ai"
+      - "api.cohere.com"
+    confidence: 1.0
+
+  perplexity:
+    display_name: "Perplexity AI"
+    domains:
+      - "api.perplexity.ai"
+      - "www.perplexity.ai"
+    confidence: 1.0
+
+  github_copilot:
+    display_name: "GitHub Copilot"
+    domains:
+      - "copilot-proxy.githubusercontent.com"
+      - "api.githubcopilot.com"
+      - "*.githubcopilot.com"
+    confidence: 1.0
+
+  cursor:
+    display_name: "Cursor"
+    domains:
+      - "api2.cursor.sh"
+      - "*.cursor.sh"
+    confidence: 1.0
+
+  azure_openai:
+    display_name: "Azure OpenAI"
+    domains:
+      - "*.openai.azure.com"
+    confidence: 1.0
+
+  aws_bedrock:
+    display_name: "AWS Bedrock"
+    domains:
+      - "bedrock-runtime.*.amazonaws.com"
+      - "bedrock.*.amazonaws.com"
+    confidence: 1.0
+
+  gcp_vertex:
+    display_name: "GCP Vertex AI"
+    domains:
+      - "*.aiplatform.googleapis.com"
+      - "us-central1-aiplatform.googleapis.com"
+      - "aiplatform.googleapis.com"
+    confidence: 1.0
+
+  midjourney:
+    display_name: "Midjourney"
+    domains:
+      - "*.midjourney.com"
+      - "midjourney.com"
+    confidence: 1.0
+
+  stability_ai:
+    display_name: "Stability AI"
+    domains:
+      - "api.stability.ai"
+      - "*.stability.ai"
+    confidence: 1.0
+
+  baidu_ernie:
+    display_name: "Baidu ERNIE Bot"
+    domains:
+      - "aip.baidubce.com"
+      - "yiyan.baidu.com"
+      - "qianfan.baidubce.com"
+    confidence: 1.0
+
+  alibaba_qwen:
+    display_name: "Alibaba Qwen"
+    domains:
+      - "dashscope.aliyuncs.com"
+      - "tongyi.aliyun.com"
+    confidence: 1.0
+
+  bytedance_doubao:
+    display_name: "ByteDance Doubao"
+    domains:
+      - "*.volcengine.com"
+      - "maas-api.ml-platform-cn-beijing.volces.com"
+    confidence: 1.0
+
+  zhipu_ai:
+    display_name: "Zhipu AI"
+    domains:
+      - "open.bigmodel.cn"
+    confidence: 1.0
+
+  moonshot:
+    display_name: "Moonshot AI (Kimi)"
+    domains:
+      - "api.moonshot.cn"
+      - "kimi.moonshot.cn"
+    confidence: 1.0
+
+  minimax:
+    display_name: "MiniMax"
+    domains:
+      - "api.minimax.chat"
+      - "*.minimax.chat"
+    confidence: 1.0
+
+  together_ai:
+    display_name: "Together AI"
+    domains:
+      - "api.together.xyz"
+      - "api.together.ai"
+    confidence: 1.0
+
+  groq:
+    display_name: "Groq"
+    domains:
+      - "api.groq.com"
+    confidence: 1.0
+
+  huggingface:
+    display_name: "Hugging Face"
+    domains:
+      - "api-inference.huggingface.co"
+      - "*.huggingface.co"
+    confidence: 0.9
+
+  replicate:
+    display_name: "Replicate"
+    domains:
+      - "api.replicate.com"
+    confidence: 1.0

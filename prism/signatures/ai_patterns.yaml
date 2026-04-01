@@ -1,0 +1,217 @@
+patterns:
+  # OpenAI
+  - name: "OpenAI Chat Completion"
+    provider: "openai"
+    service_type: "chat"
+    uri_regex: "/v1/chat/completions"
+    headers:
+      "authorization": "Bearer sk-.*"
+    confidence: 0.95
+
+  - name: "OpenAI Completion (legacy)"
+    provider: "openai"
+    service_type: "completion"
+    uri_regex: "/v1/completions"
+    headers:
+      "authorization": "Bearer sk-.*"
+    confidence: 0.95
+
+  - name: "OpenAI Embeddings"
+    provider: "openai"
+    service_type: "embedding"
+    uri_regex: "/v1/embeddings"
+    confidence: 0.90
+
+  - name: "OpenAI Images"
+    provider: "openai"
+    service_type: "image"
+    uri_regex: "/v1/images/(generations|edits|variations)"
+    confidence: 0.90
+
+  - name: "OpenAI Files Upload"
+    provider: "openai"
+    service_type: "upload"
+    uri_regex: "/v1/files"
+    confidence: 0.85
+
+  - name: "OpenAI Realtime WebSocket"
+    provider: "openai"
+    service_type: "realtime"
+    uri_regex: "/v1/realtime"
+    confidence: 0.98
+
+  # Anthropic
+  - name: "Anthropic Messages API"
+    provider: "anthropic"
+    service_type: "chat"
+    uri_regex: "/v1/messages"
+    headers:
+      "x-api-key": "sk-ant-.*"
+      "anthropic-version": ".*"
+    confidence: 0.98
+
+  - name: "Anthropic Messages (any key)"
+    provider: "anthropic"
+    service_type: "chat"
+    uri_regex: "/v1/messages"
+    headers:
+      "anthropic-version": ".*"
+    confidence: 0.90
+
+  # DeepSeek
+  - name: "DeepSeek Chat Completion"
+    provider: "deepseek"
+    service_type: "chat"
+    uri_regex: "/api/v0/chat/completion"
+    confidence: 0.98
+
+  - name: "DeepSeek API Chat"
+    provider: "deepseek"
+    service_type: "chat"
+    uri_regex: "/v1/chat/completions"
+    confidence: 0.95
+
+  - name: "DeepSeek File Upload"
+    provider: "deepseek"
+    service_type: "upload"
+    uri_regex: "/api/v0/file/upload_file"
+    headers:
+      "x-client-platform": ".*"
+      "x-app-version": ".*"
+    confidence: 0.95
+
+  # Google AI / Gemini
+  - name: "Google Gemini GenerateContent"
+    provider: "google_ai"
+    service_type: "chat"
+    uri_regex: "/v1(beta)?/models/[^/]+:(generateContent|streamGenerateContent)"
+    confidence: 0.98
+
+  - name: "Google AI Studio"
+    provider: "google_ai"
+    service_type: "chat"
+    uri_regex: "/(v1|v1beta)/models"
+    confidence: 0.80
+
+  # Azure OpenAI
+  - name: "Azure OpenAI Chat"
+    provider: "azure_openai"
+    service_type: "chat"
+    uri_regex: "/openai/deployments/[^/]+/chat/completions"
+    confidence: 0.98
+
+  - name: "Azure OpenAI Completion"
+    provider: "azure_openai"
+    service_type: "completion"
+    uri_regex: "/openai/deployments/[^/]+/completions"
+    confidence: 0.95
+
+  # Mistral
+  - name: "Mistral Chat"
+    provider: "mistral"
+    service_type: "chat"
+    uri_regex: "/v1/chat/completions"
+    confidence: 0.90
+
+  # Cohere
+  - name: "Cohere Chat"
+    provider: "cohere"
+    service_type: "chat"
+    uri_regex: "/v1/chat"
+    confidence: 0.90
+
+  - name: "Cohere Generate"
+    provider: "cohere"
+    service_type: "completion"
+    uri_regex: "/v1/generate"
+    confidence: 0.90
+
+  # GitHub Copilot
+  - name: "Copilot Completions"
+    provider: "github_copilot"
+    service_type: "completion"
+    uri_regex: "/v1/(engines/[^/]+/)?completions"
+    confidence: 0.90
+
+  # Generic LLM patterns (cross-provider)
+  - name: "Generic LLM Chat API"
+    provider: "unknown"
+    service_type: "chat"
+    uri_regex: ".*/chat/completions|.*/v1/messages"
+    body_contains:
+      - "model"
+      - "messages"
+    confidence: 0.70
+
+  - name: "Generic LLM Completion"
+    provider: "unknown"
+    service_type: "completion"
+    uri_regex: ".*/completions|.*/generate"
+    body_contains:
+      - "prompt"
+      - "max_tokens"
+    confidence: 0.60
+
+  - name: "Generic Embedding"
+    provider: "unknown"
+    service_type: "embedding"
+    uri_regex: ".*/embeddings"
+    body_contains:
+      - "input"
+    confidence: 0.55
+
+  # Perplexity
+  - name: "Perplexity Chat"
+    provider: "perplexity"
+    service_type: "chat"
+    uri_regex: "/chat/completions"
+    confidence: 0.88
+
+  # Together AI
+  - name: "Together AI Inference"
+    provider: "together_ai"
+    service_type: "chat"
+    uri_regex: "/v1/(chat/completions|completions|inference)"
+    confidence: 0.90
+
+  # Groq
+  - name: "Groq Chat"
+    provider: "groq"
+    service_type: "chat"
+    uri_regex: "/openai/v1/chat/completions"
+    confidence: 0.95
+
+  # Baidu ERNIE
+  - name: "Baidu ERNIE Chat"
+    provider: "baidu_ernie"
+    service_type: "chat"
+    uri_regex: "/rpc/2.0/ai_custom/v1/wenxinworkshop/chat"
+    confidence: 0.95
+
+  # Alibaba Qwen
+  - name: "Alibaba Qwen Generation"
+    provider: "alibaba_qwen"
+    service_type: "chat"
+    uri_regex: "/v1/services/aigc/text-generation/generation"
+    confidence: 0.95
+
+  # Zhipu AI
+  - name: "Zhipu GLM Chat"
+    provider: "zhipu_ai"
+    service_type: "chat"
+    uri_regex: "/api/paas/v[0-9]+/chat/completions"
+    confidence: 0.95
+
+  # Stability AI
+  - name: "Stability Image Generation"
+    provider: "stability_ai"
+    service_type: "image"
+    uri_regex: "/v[0-9]+/(generation|image)"
+    confidence: 0.90
+
+  # Moonshot / Kimi
+  - name: "Moonshot Chat"
+    provider: "moonshot"
+    service_type: "chat"
+    uri_regex: "/v1/chat/completions"
+    confidence: 0.90
